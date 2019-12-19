@@ -104,8 +104,8 @@ describe('book routes', () => {
       });
   });
 
-  it('gets an author by partial input', () => {
-      let partialText = 'Ther';
+  it.skip('gets an author by partial input', () => {
+    let partialText = 'Ther';
     return request(app)
       .get(`/api/v1/books/${partialText}`)
       .then(res => {
