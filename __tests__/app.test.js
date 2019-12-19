@@ -104,12 +104,11 @@ describe('book routes', () => {
       });
   });
 
-  it.skip('gets an author by partial input', () => {
-    let partialText = 'Ther';
+  it('gets an author by partial input', () => {
     return request(app)
-      .get(`/api/v1/books/${partialText}`)
+      .get('/api/v1/books/search?partialText=Ther')
       .then(res => {
-        expect(res.body).toEqual({
+        expect(res.body).toEqual([{
           _id: book.id,
           bookID: '23',
           title: 'Dark Star Safari',
@@ -120,7 +119,7 @@ describe('book routes', () => {
           language_code: 'Klingon',
           text_reviews_count: 20003,
           __v: 0
-        });
+        }]);
       });
   });
 
