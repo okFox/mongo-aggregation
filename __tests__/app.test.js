@@ -65,7 +65,7 @@ describe('book routes', () => {
       });
   });
 
-  it('gets a movie by id', () => {
+  it('gets a book by id', () => {
     return request(app)
       .get(`/api/v1/books/${book.id}`)
       .then(res => {
